@@ -1,5 +1,5 @@
 {
-	"name": "pl_copy_sqlserver_adls",
+	"name": "pl_copy_datalake_sqlserver",
 	"properties": {
 		"activities": [
 			{
