@@ -1,0 +1,9 @@
+{
+	"name": "pavanadfproject1",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "427f97b7-84f1-490d-97e2-c29ac50aa93f",
+		"tenantId": "b9b54d0a-11a4-4356-bdc4-af63415861a9"
+	}
+}

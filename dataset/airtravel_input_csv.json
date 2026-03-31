@@ -1,0 +1,41 @@
+{
+	"name": "airtravel_input_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blob_LinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "airtravel.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Month",
+				"type": "String"
+			},
+			{
+				"name": " \"1958\"",
+				"type": "String"
+			},
+			{
+				"name": " \"1959\"",
+				"type": "String"
+			},
+			{
+				"name": " \"1960\"",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
