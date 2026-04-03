@@ -1,0 +1,12 @@
+{
+	"name": "ADLs_foreach2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://bronzeadls.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDcwMjhBQ0Q1LUYwRDAtNDg1Mi04QkI0LUVCMDRFQTUzRUIyMF85YTNmOWVmOC0wYTdiLTQ2Y2MtYWUwYi0zMmY5YTk1MWJiZjciDQp9"
+		}
+	}
+}
