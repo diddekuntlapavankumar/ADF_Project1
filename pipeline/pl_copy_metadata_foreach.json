@@ -1,0 +1,140 @@
+{
+	"name": "pl_copy_metadata_foreach",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('metadata')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"wildcardFileName": "*",
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_datalake_input",
+									"type": "DatasetReference",
+									"parameters": {
+										"containername": {
+											"value": "@item().Inputcontainer",
+											"type": "Expression"
+										},
+										"directoryname": {
+											"value": "@item().Inputdirectory",
+											"type": "Expression"
+										},
+										"filename": {
+											"value": "@item().Inputfile",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_datalake_output",
+									"type": "DatasetReference",
+									"parameters": {
+										"containername": {
+											"value": "@item().Outputcontainer",
+											"type": "Expression"
+										},
+										"directoryname": {
+											"value": "@item().Outputdirectory",
+											"type": "Expression"
+										},
+										"filename": {
+											"value": "@item().Outputfile",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"metadata": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"Inputfile": "employees.csv",
+						"Inputcontainer": "tinput1",
+						"Inputdirectory": "folder",
+						"Outputfile": "employees.csv",
+						"Outputcontainer": "folderforeach1",
+						"Outputdirectory": "subfolderforeach1"
+					},
+					{
+						"Inputfile": "customers.csv",
+						"Inputcontainer": "tinput1",
+						"Inputdirectory": "folder",
+						"Outputfile": "customers.csv",
+						"Outputcontainer": "folderforeach1",
+						"Outputdirectory": "subfolderforeach2"
+					},
+					{
+						"Inputfile": "biostas.csv",
+						"Inputcontainer": "tinput1",
+						"Inputdirectory": "folder",
+						"Outputfile": "biostas.csv",
+						"Outputcontainer": "folderforeach1",
+						"Outputdirectory": "subfolderforeach3"
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
