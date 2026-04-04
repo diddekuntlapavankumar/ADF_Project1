@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "pavanadfproject1"
+		},
+		"ADLS_LinkedService_accountKey": {
+			"value": ""
+		},
+		"ADLS_foreach1_accountKey": {
+			"value": ""
+		},
+		"ADLs_foreach2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"Blob_LinkedService_connectionString": {
+			"value": ""
+		},
+		"adls_link_accountKey": {
+			"value": ""
+		},
+		"adls_link_service_accountKey": {
+			"value": ""
+		},
+		"blob_Link_connectionString": {
+			"value": ""
+		},
+		"ls_adls_parameter_accountKey": {
+			"value": ""
+		},
+		"ADLS_LinkedService_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"ADLS_foreach1_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"ADLs_foreach2_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://Azurekeyvalutkv.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "pavansqlserver2.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "Sample"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "SQL"
+		},
+		"adls_link_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"adls_link_service_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		},
+		"ls_adls_parameter_properties_typeProperties_url": {
+			"value": "https://bronzeadls.dfs.core.windows.net/"
+		}
+	}
+}
