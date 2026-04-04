@@ -109,12 +109,12 @@
 				"type": "Array",
 				"defaultValue": [
 					{
-						"Inputfile": "employees.csv",
+						"Inputfile": "Employees.csv",
 						"Inputcontainer": "tinput1",
 						"Inputdirectory": "folder",
-						"Outputfile": "employees.csv",
+						"Outputfile": "Employees.csv",
 						"Outputcontainer": "folderforeach1",
-						"Outputdirectory": "subfolderforeach1"
+						"Outputdirectory": "subfolderforeach"
 					},
 					{
 						"Inputfile": "customers.csv",
@@ -122,7 +122,7 @@
 						"Inputdirectory": "folder",
 						"Outputfile": "customers.csv",
 						"Outputcontainer": "folderforeach1",
-						"Outputdirectory": "subfolderforeach2"
+						"Outputdirectory": "subfolderforeach1"
 					},
 					{
 						"Inputfile": "biostas.csv",
@@ -130,7 +130,7 @@
 						"Inputdirectory": "folder",
 						"Outputfile": "biostas.csv",
 						"Outputcontainer": "folderforeach1",
-						"Outputdirectory": "subfolderforeach3"
+						"Outputdirectory": "subfolderforeach2"
 					}
 				]
 			}
