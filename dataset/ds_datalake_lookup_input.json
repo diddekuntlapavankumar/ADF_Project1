@@ -1,0 +1,49 @@
+{
+	"name": "ds_datalake_lookup_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_foreach1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "output.csv",
+				"folderPath": "folder",
+				"fileSystem": "tinput1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Inputfile",
+				"type": "String"
+			},
+			{
+				"name": "Inputcontainer",
+				"type": "String"
+			},
+			{
+				"name": "Inputdirectory",
+				"type": "String"
+			},
+			{
+				"name": "Outputfile",
+				"type": "String"
+			},
+			{
+				"name": "Outputcontainer",
+				"type": "String"
+			},
+			{
+				"name": "Outputdirectory",
+				"type": "String"
+			}
+		]
+	}
+}
