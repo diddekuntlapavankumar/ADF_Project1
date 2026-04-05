@@ -1,5 +1,5 @@
 {
-	"name": "pl_copy_metadata_foreach",
+	"name": "pl_copy_metadata_foreach_fullload",
 	"properties": {
 		"activities": [
 			{
@@ -96,7 +96,7 @@
 											"type": "Expression"
 										},
 										"directoryname": {
-											"value": "@item().Outputdirectory",
+											"value": "@concat(item().Outputdirectory,'/', formatDateTime(utcNow(),'yyyy-MM-dd-HH'))",
 											"type": "Expression"
 										},
 										"filename": {
@@ -185,9 +185,12 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
+									"preCopyScript": {
+										"value": "@{concat('TRUNCATE TABLE ', item().sqlschema, '.', item().sqltablename)}",
+										"type": "Expression"
+									},
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
@@ -210,7 +213,7 @@
 											"type": "Expression"
 										},
 										"directoryname": {
-											"value": "@item().Outputdirectory",
+											"value": "@concat(item().Outputdirectory,'/', formatDateTime(utcNow(),'yyyy-MM-dd-HH'))",
 											"type": "Expression"
 										},
 										"filename": {
