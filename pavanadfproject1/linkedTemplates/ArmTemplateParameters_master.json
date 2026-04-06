@@ -17,6 +17,9 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
 		"Blob_LinkedService_connectionString": {
 			"value": ""
 		},
