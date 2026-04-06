@@ -124,18 +124,12 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "ds_datalake_lookup_input",
+						"referenceName": "ds_metadataconfig",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
@@ -185,10 +179,6 @@
 								},
 								"sink": {
 									"type": "AzureSqlSink",
-									"preCopyScript": {
-										"value": "@{concat('TRUNCATE TABLE ', item().sqlschema, '.', item().sqltablename)}",
-										"type": "Expression"
-									},
 									"writeBehavior": "insert",
 									"sqlWriterUseTableLock": false,
 									"disableMetricsCollection": false

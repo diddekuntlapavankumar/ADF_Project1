@@ -1,0 +1,54 @@
+{
+	"name": "ds_metadataconfig",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Inputfile",
+				"type": "varchar"
+			},
+			{
+				"name": "Inputcontainer",
+				"type": "varchar"
+			},
+			{
+				"name": "Inputdirectory",
+				"type": "varchar"
+			},
+			{
+				"name": "Outputfile",
+				"type": "varchar"
+			},
+			{
+				"name": "Outputcontainer",
+				"type": "varchar"
+			},
+			{
+				"name": "Outputdirectory",
+				"type": "varchar"
+			},
+			{
+				"name": "sqlschema",
+				"type": "varchar"
+			},
+			{
+				"name": "sqltablename",
+				"type": "varchar"
+			},
+			{
+				"name": "flag",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Metadata1Config"
+		}
+	}
+}
